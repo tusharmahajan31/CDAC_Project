@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="examination/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>This is Seat No page</title>
+</head>
+<body>
+	<section>
+		<div class="container">
+
+
+			<div class="card">
+				<div class="container card-header text-center">
+					<h2>Student Seat No List</h2>
+				</div>
+				<div class="card-body">
+					<div class="container">
+
+						<form class="row g-3" action="#" th:object="${students}"
+							enctype="multipart/form-data" method="POST"
+							th:action="@{/examination/print-seat-no-list}">
+
+							<div class="col-md-6">
+								<label for="inputDepartment" class="form-label">Choose
+									Date</label> <select name="date" id="inputState" required
+									class="form-select">
+									<option selected disabled>Choose...</option>
+									<option th:each="d:${dateSheetRecords}" th:text="${d.date}">Computer
+										Science</option>
+
+								</select>
+							</div>
+
+							<div class="col-md-6">
+								<label for="inputDepartment" class="form-label">Choose
+									Shift Time</label> <select name="time" id="inputState" required
+									class="form-select">
+									<option selected disabled>Choose...</option>
+									<option th:each="h:${dateSheetHeaders}"
+										th:text="${h.firstShiftTime}">Computer Science</option>
+									<option th:each="h:${dateSheetHeaders}"
+										th:text="${h.secondShiftTime}">Computer Science</option>
+
+								</select>
+							</div>
+
+							<div class="col-md-6">
+								<label for="inputDepartment" class="form-label">Choose
+									First Paper</label> <select name="firstPaper" id="inputState" required
+									class="form-select">
+									<option selected disabled>Choose...</option>
+									<option th:each="d:${dateSheetRecords}"
+										th:text="${d.firstPaperNameOne}">Computer Science</option>
+									<option th:each="d:${dateSheetRecords}"
+										th:text="${d.secondPaperNameOne}">Computer Science</option>
+										<option th:each="d:${dateSheetRecords}"
+										th:text="${d.firstPaperNameTwo}">Computer Science</option>
+										<option th:each="d:${dateSheetRecords}"
+										th:text="${d.secondPaperNameTwo}">Computer Science</option>
+
+								</select>
+							</div>
+							
+							<div class="col-md-6">
+								<label for="inputDepartment" class="form-label">Choose
+									Second Paper</label> <select name="secondPaper" id="inputState" required
+									class="form-select">
+									<option selected disabled>Choose...</option>
+									<option th:each="d:${dateSheetRecords}"
+										th:text="${d.firstPaperNameOne}">Computer Science</option>
+									<option th:each="d:${dateSheetRecords}"
+										th:text="${d.secondPaperNameOne}">Computer Science</option>
+										<option th:each="d:${dateSheetRecords}"
+										th:text="${d.firstPaperNameTwo}">Computer Science</option>
+										<option th:each="d:${dateSheetRecords}"
+										th:text="${d.secondPaperNameTwo}">Computer Science</option>
+
+								</select>
+							</div>
+							
+							<div class="col-md-6">
+								<label for="inputDepartment" class="form-label">Choose
+									First Batch</label> <select name="firstBatch" id="inputState" required
+									class="form-select">
+									<option selected disabled>Choose...</option>
+									<option th:each="b:${batch}"
+										th:text="${b.batch}">Computer Science</option>
+								</select>
+							</div>
+							
+							<div class="col-md-6">
+								<label for="inputDepartment" class="form-label">Choose
+									Second Batch</label> <select name="secondBatch" id="inputState" required
+									class="form-select">
+									<option selected disabled>Choose...</option>
+									<option th:each="b:${batch}"
+										th:text="${b.batch}">Computer Science</option>
+								</select>
+							</div>
+
+							<div class="col-12 text-center">
+								<button type="submit" name="" class="btn btn-outline-primary">Generate</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+</body>
+</html>

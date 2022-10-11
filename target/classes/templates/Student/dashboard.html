@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="Student/base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title> Dashboard page</title>
+</head>
+<body>
+	<section>
+		<h1 class="text-center" >Welcome<span th:text="${user.name}"></span></h1>
+	</section>
+</body>
+</html>
